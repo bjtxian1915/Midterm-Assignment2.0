@@ -1,0 +1,139 @@
+/* Add font files for Baloo */
+@font-face {
+    font-family: 'Baloo';
+    src: url('Wanime/fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Add font files for Arimo */
+  @font-face {
+    font-family: 'Arimo';
+    src: url('../fonts/Arimo-Italic-VariableFont_wght.ttf') format('truetype'),
+         url('../fonts/Arimo-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Add font files for Arial */
+  @font-face {
+    font-family: 'Arial';
+    src: url('fonts/arial.ttf') format('truetype'),
+         url('fonts/arialbd.ttf') format('truetype'),
+         url('fonts/arialbi.ttf') format('truetype'),
+         url('fonts/ariali.ttf') format('truetype'),
+         url('fonts/ariblk.ttf') format('truetype'),
+         url('fonts/ARIALN.TTF') format('truetype'),
+         url('fonts/ARIALNB.TTF') format('truetype'),
+         url('fonts/ARIALNBI.TTF') format('truetype'),
+         url('fonts/ARIALNI.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  :root {
+    --font-family-baloo: 'Baloo', sans-serif;
+    --font-family-arimo: 'Arimo', sans-serif;
+    --font-family-arial: 'Arial', sans-serif;
+  }/*以上為添加文字*/
+
+    body{
+        width: 1920px;
+        height: 1080px;
+        margin: auto;
+        padding: auto;
+    }
+    header{
+        width: 100%;
+        height: 110px;
+        background: linear-gradient(to right, #FF6392, #1B1F3B 80%);
+        padding: 0;
+    }
+    .icon{
+        width: 294px;
+        height: 69px;
+        display: flex;
+        padding-top: 21px;
+        padding-left: 80px;
+    }
+    article{
+        padding-top: 117px;
+        padding-left: 762px;
+        padding-right: 763px;
+        width: 395px;
+        height: 632px;
+        margin: 0;
+    }
+    p{
+    font-family: 'Arial, sans-serif';
+    color:#1B1F3B;
+    }
+
+    form{
+        width: 395px;
+        height: 305px;
+    }
+    /*讓輸入框的兩邊變成半圓形 */
+    input[type="email"],
+    input[type="password"] {
+    display: flex;
+    flex-wrap: wrap; /* 讓子元素換行 */
+    gap: 21px; /* 設定輸入框之間的間距 */
+    flex: 1; /* 讓輸入框均分空間 */
+    min-width: 150px; /* 設定最小寬度，防止太窄 */
+    width: 395px; /* 輸入框寬度填滿容器 */
+    padding: 10px; /* 內部間距，讓文字更易讀 */
+    margin: 0px 0px 21px 0px; /* 上下間距，分隔輸入框 */
+    border: 1px solid #ccc; /* 輕微的邊框 */
+    border-radius: 25px; /* 設定邊框圓角，數值越大圓弧越明顯 */
+    box-sizing: border-box; /* 確保內部間距不會增加寬度 */
+    font-size: 20px; /* 設定字體大小 */
+    }/* 根據輸入框的高度調整 border-radius 的值 */
+
+    /* 登入按鈕的樣式 */
+    input[type="submit"] {
+    background-color: #1B1F3B; /* 背景顏色 */
+    color: #fff; /* 字體顏色設為白色 */
+    border: none; /* 移除邊框 */
+    padding: 10px 20px; /* 設定內部間距，讓按鈕更容易點擊 */
+    border-radius: 25px; /* 讓按鈕兩邊呈現半圓形 */
+    font-size: 30px; /* 設定字體大小 */
+    cursor: pointer; /* 當滑鼠移到按鈕上時顯示指標 */
+    width: 330px; /* 如果希望按鈕寬度跟輸入框一致，設為100% */
+    box-sizing: border-box; /* 確保內部間距不影響按鈕寬度 */
+    }
+
+    /* 當按鈕被滑鼠懸停時的效果 */
+    input[type="submit"]:hover {
+    background-color: #FF6392; /* 改變背景顏色，增加互動性 */
+    }
+    .decorate{
+        width: 1920px;
+        height: 103px;
+        padding-top: 105px;
+        font-size: 112px;
+        color:#F2F2F2;
+        font-family: baloo,arimo,sans-serif;
+    }
+    .userimage{
+        margin: auto;
+        padding-bottom: 44px;
+        padding-left: 102px;
+    }
+    .loginn{
+        padding-left: 44px;
+        padding-right: 44px;
+        font-size: 60px;
+        margin: 0;
+        padding-bottom: 32px;
+        font-family: baloo,arimo,sans-serif;
+        color: #1B1F3B;
+    }
+    .name{
+        font-size: 30px;
+        width: 395px;
+        height: 88px;
+    }
+    .click{
+        padding-top: 32px;
+        padding-left: 33px;
+    }

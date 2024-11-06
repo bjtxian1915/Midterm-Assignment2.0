@@ -1,0 +1,655 @@
+
+/* Add font files for Baloo */
+@font-face {
+    font-family: 'Baloo';
+    src: url('./fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Add font files for Arimo */
+  @font-face {
+    font-family: 'Arimo';
+    src: url('./fonts/Arimo-Italic-VariableFont_wght.ttf') format('truetype'),
+         url('./fonts/Arimo-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Add font files for Arial */
+  @font-face {
+    font-family: 'Arial';
+    src: url('./fonts/arial.ttf') format('truetype'),
+         url('./fonts/arialbd.ttf') format('truetype'),
+         url('./fonts/arialbi.ttf') format('truetype'),
+         url('./fonts/ariali.ttf') format('truetype'),
+         url('./fonts/ariblk.ttf') format('truetype'),
+         url('./fonts/ARIALN.TTF') format('truetype'),
+         url('./fonts/ARIALNB.TTF') format('truetype'),
+         url('./fonts/ARIALNBI.TTF') format('truetype'),
+         url('./fonts/ARIALNI.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  :root {
+    --font-family-baloo: 'Baloo', sans-serif;
+    --font-family-arimo: 'Arimo', sans-serif;
+    --font-family-arial: 'Arial', sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100%;
+    cursor: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 130px;  /* Size of the circle */
+    height: 70px;
+    border-radius: 50%;
+    /*background-color: #FF6392;*/ /* You can change the color here */
+    pointer-events: none; /* Ensures the circle won't interfere with other elements */
+    transform: translate(-50%, -50%); /* Center the circle at the cursor position */
+    transition: transform 0.1s ease-out; /* Smooth animation */
+    z-index: 9999;
+    background-image: url('img/cursor.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* vv HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER vv */
+
+#WanimeLOGO{
+    width: 294px;
+    height: 69px;
+    margin-left: 80px;
+    margin-top: 40px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 146px;
+    background: linear-gradient(to right, #FF6392 0%, #8F4267 19%, #1B1F3B 46%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    line-height: 38px;
+    position: relative; /* Ensures it appears above #indexbg1 */
+    z-index: 2; /* Higher z-index than #indexbg1 */
+    
+    /*justify-content: space-between;*/
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 1046px;
+    height: 85px;
+    font-size: 35px;
+    color: #F2F2F2;
+    font-family: Arial;
+    text-align: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-right: 40px;
+    position: relative;
+
+    /*margin: 0;
+    padding: 0;*/
+}
+
+.header-nav a{
+    text-decoration: none;
+    color: #F2F2F2;
+    
+    position: relative;
+    display: inline-block; /*
+    padding: 20px 40px; 
+    overflow: hidden; 
+    min-width: 120px;*/
+}
+
+
+.header-nav a:visited {
+    color: #F2F2F2; /* Change color to purple after the link is visited */
+}
+
+.header-nav a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #FF6392; /* Circle color */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Initially, the circle is not visible */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: -1; /* Ensure the circle stays behind the text */
+}
+
+.header-nav a:hover::before{
+    transform: translate(-50%, -50%) scale(10); /* Show and grow the circle */
+}
+
+#profile{
+    width: 85px;
+    height: 85px;
+}
+
+
+/* vv ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE ARTICLE vv */
+.information a {
+    font-size: 29px;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    margin: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.information a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 122.5px; /* Initial circle size */
+    height: 122.5px; /* Initial circle size */
+    background-color: #1B1F3B; /* Initial circle color */
+    border-radius: 50%;
+    z-index: -1; /* Place it behind the link text */
+    transition: all 0.3s ease; /* Smooth transition for size and color */
+}
+
+/* Active button styling */
+.information a.active {
+    color: #1B1F3B; /* Change text color */
+    font-weight: bold;
+    /* font-size: 35px; Slightly increase font size */
+    /*margin: 0 15px;  Push surrounding buttons */
+}
+
+
+.information a.active::before {
+    width: 170px; /* Expand circle */
+    height: 170px;
+    background-color: #3FF6E3; /* New background color */
+}
+
+.information a:hover {
+    color: #1B1F3B; /* Change text color on hover for contrast */
+    font-weight: bold;
+}
+
+/* Hover effect to expand the circle */
+.information a:hover::before {
+    width: 170px; /* Expanded circle size */
+    height: 170px; /* Expanded circle size */
+    background-color: #3FF6E3; /* Change color on hover */
+}
+
+
+.notion{
+    margin-bottom: 250px;
+}
+
+#indexbg1{
+    float:right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1; /* Set a low z-index to place it behind */
+    height: auto;
+    margin-top: 110px;
+    transition: opacity 1s ease-in-out; /* Smooth fade transition */
+}
+
+.information-box{
+    position: relative; /* Ensures it appears above #indexbg1 */
+    z-index: 2; /* Higher z-index than #indexbg1 */
+    width: 934px;
+    height: 676.5px;
+    margin-top: 125.5px;
+    margin-left: 135px;
+    
+}
+
+.information{
+    width: 934px;
+    margin-left: 45px;
+}
+
+.information a {
+    font-size: 29px;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    margin: 5px;
+    color: #FFFFFF; /* text color */
+    text-decoration: none;
+}
+  
+.information a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 122.5px; /* initial circle size */
+    height: 122.5px; /* initial circle size */
+    background-color: #1B1F3B; /* initial circle color */
+    border-radius: 50%;
+    z-index: -1; /* places it behind the link text */
+}
+  
+  /* Add hover effects later to grow and change color */  
+
+
+.notion-board{
+    margin-top: 95px;
+    max-height: 400px; /* Set the maximum height for scrolling */
+    overflow-y: auto; /* Adds a vertical scrollbar */
+    overflow-x: auto; /* Horizontal */
+    white-space: nowrap;
+    padding-right: 10px; /* Adds space for the scrollbar */
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+/* Custom scrollbar styling */
+.notion-board::-webkit-scrollbar {
+    width: 20px; /* Width of the scrollbar */
+    height: 20px;
+}
+
+.notion-board::-webkit-scrollbar-track {
+    background: #ffffff; /* Background of the scrollbar track */
+    border-radius: 5px;
+}
+
+.notion-board::-webkit-scrollbar-thumb {
+    background-color: #1B1F3B; /* Color of the scrollbar thumb */
+    border-radius: 50px;
+}
+
+.notion-board::-webkit-scrollbar-thumb:hover {
+    background: #FF6392; /* Color of the thumb on hover */
+}
+
+.announcement {
+    display: flex;
+    align-items: center; /* Aligns text vertically */
+    gap: 20px; /* Space between <li> and <p> */
+    border-bottom: 1px solid #000000;
+    width: 875px;
+    height: 75px;
+}
+
+.notion-board .notion-info li {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 32px;
+    color: #000000;
+    
+}
+.notion-board .notion-info p {
+    font-size: 32px; /* Example style */
+    color: #000000; /* Change to desired color */
+    
+}
+
+
+
+/* vv CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR vv */
+
+.animeCalendar{
+    margin-top: 270px;
+    margin: 0 auto;
+    align-items: center;
+    width: 1707px;
+    height: auto;
+    margin-bottom: 200px;
+    display: grid;
+}
+
+#calendarTitle{
+    font-size: 90px;
+    font-family: 'Baloo';
+    margin-bottom: 50px;
+
+}
+.calendarSubtitle {
+    font-family: 'Arimo';
+    font-weight: bold;
+}
+
+.cycle {
+    display: flex;
+    gap: 80px;
+    width: 505px;
+    margin-bottom: 100px;
+    margin-left: 60px;
+}
+
+.cycle-btn {
+    position: relative;
+    font-size: 29px;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.cycle-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 165px;
+    height: 165px;
+    background-color: #1B1F3B;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.calender-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.weeks {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    font-size: 29px;
+    font-weight: bold;
+    
+    
+}
+
+.week-day {
+    flex: 1;
+    text-align: center;
+    
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    width: 232px;
+    height: 184px;
+}
+
+table td div{
+    margin-bottom: 20px;
+}
+
+table td img{
+    width: 232px;
+    height: 153px;
+    
+}
+
+table td.new {
+    border: 5px solid #FF6392; /* Example color, adjust as needed */
+    border-radius: 20px;
+}
+
+
+/* vv FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM FORUM vv */
+.forumarticle{
+    margin-bottom: 200px;
+}
+
+#indexbg2{
+    float:right;
+    position: absolute;
+    top: 0;
+
+    z-index: 1; /* Set a low z-index to place it behind */
+    height: auto;
+    margin-top: 3230px;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.forum{
+    position: relative; /* Ensures it appears above #indexbg1 */
+    z-index: 2;
+    width: 833px;
+    height: 909px;
+    float: right;
+    margin-right: 136px;
+}
+
+#forum-title{
+    font-size: 90px;
+    font-family: 'Baloo';
+
+}
+
+.forumSubtitle {
+    font-family: 'Arimo';
+    font-weight: bold;
+}
+
+#WanimeUser{
+    width: 100px;
+    height: 100px;
+}
+
+.comments{
+    width: 833px;
+    height: 640px;
+    overflow-y: auto;
+    padding-right: 10px;
+    /*float:right;
+    margin-right: 136px;*/
+}
+
+/* Style the entire scrollbar */
+.comments::-webkit-scrollbar {
+    width: 30px; /* Width of the vertical scrollbar */
+    height: 762px; /* Height of the horizontal scrollbar (if needed) */
+}
+
+/* Style the track (background of the scrollbar) */
+.comments::-webkit-scrollbar-track {
+
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.comments::-webkit-scrollbar-thumb {
+    background-color: #1B1F3B; /* Color of the scrollbar thumb */
+    border-radius: 50px; /* Rounded corners for the thumb */
+    border: 3px solid #ffffff; /* Add some space around the thumb */
+}
+
+/* Style the thumb on hover */
+.comments::-webkit-scrollbar-thumb:hover {
+    background-color: #FF6392; /* Hover */
+}
+
+
+.comment{
+    display: flex;
+    flex-direction: row;
+    width: 789px;
+    height: 182px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border:#000000 solid 2.5px;
+    border-radius: 100px;
+}
+
+.text-area{
+    display: flex;
+    flex-direction: column;
+    width:535px;
+    margin-left: 25px;
+}
+
+#comment-author{
+    font-family: 'Baloo','Arimo';
+    font-size: 40px;
+    font-weight: bold;
+}
+#comment-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 29px;
+
+}
+
+/* Style the outer container of the comment box */
+.comment-box {
+    width: 833px; /* Full width or adjust as needed */
+    height: 129px;
+    background-color: #ffffff; /* Light background */
+    border: 5px solid #1B1F3B;
+    border-radius: 140px;
+}
+
+/* Style the comment form */
+.comment-form {
+    margin-top: 13px;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 5px; /* Space between input and button */
+}
+
+/* Style the input field */
+.comment-form input[type="text"]{
+    flex-grow: 1; /* Expands input to fill space */
+    padding: 10px;
+    padding-left: 50px;
+    font-size: 2em;
+    width: 580px;
+    border: none;
+    outline: none; /* Removes default focus outline */
+    background-color: transparent;
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+.comment-form input[type="text"]::placeholder {
+    color: #D9D9D9;
+}
+
+/* Style the submit button */
+.comment-form button {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+
+/* Style the button icon */
+.comment-form button img {
+    width: 70px; /* Set icon size */
+    height: 70px;
+    opacity: 0.7;
+}
+
+.comment-form button:hover img {
+    opacity: 1; /* Makes icon fully opaque on hover */
+}
+
+#waa {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* vv FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER vv */
+
+footer{
+    height: 701px;
+    width: 100%;
+    background: linear-gradient(to bottom, #A4486F 0%, #6C375A 31%, #1B1F3B 100%);
+    color:#FFFFFF;
+
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+.footer-contents{
+    width: 416px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+    margin-top: 50px;
+}
+
+#contact-us{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 60px;
+    margin-bottom: 124px;
+    width: 394px;
+    text-align: center;
+}
+
+#contacts img{
+    padding: 10px;
+}
+
+#email{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 34px;
+}
+
+#email p{
+    margin:10px;
+}
+
+#copyright{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 189px;
+}
+
+
+
+
